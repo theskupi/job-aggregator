@@ -1,0 +1,14 @@
+[
+  {
+    "jobId": "2001304864",
+    "title": "Senior Frontend Engineer",
+    "employer": "Example CZ s.r.o.",
+    "location": "Praha",
+    "salary": "80 000–110 000 Kč",
+    "workArrangement": "remote",
+    "description": "React and TypeScript application development.",
+    "postedAt": "2026-08-31T00:00:00+02:00",
+    "canonicalUrl": "https://www.jobs.cz/rpd/2001304864/"
+  },
+  { "title": "Invalid item without employer and URL" }
+]

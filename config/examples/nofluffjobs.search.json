@@ -1,0 +1,15 @@
+{
+  "sourceListId": "remote-international",
+  "sourceIds": ["nofluffjobs"],
+  "instructions": {
+    "criteria": {
+      "query": "frontend developer, React, TypeScript",
+      "workArrangements": ["remote", "hybrid"]
+    },
+    "context": {
+      "profile": "Experienced frontend software engineer",
+      "preferences": ["remote work", "modern frontend architecture", "design systems"]
+    }
+  },
+  "limitPerSource": 50
+}

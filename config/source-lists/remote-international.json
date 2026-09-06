@@ -2,5 +2,5 @@
   "version": 1,
   "id": "remote-international",
   "name": "Remote international jobs",
-  "sourceIds": ["linkedin-jobs"]
+  "sourceIds": ["linkedin-jobs", "nofluffjobs"]
 }

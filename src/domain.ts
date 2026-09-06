@@ -1,11 +1,12 @@
 import { z } from "zod";
 
 const nonEmpty = z.string().trim().min(1);
+const workArrangementSchema = z.enum(["remote", "hybrid", "onsite"]);
 
 export const acquisitionSchema = z.object({
   provider: z.literal("apify"),
   actorId: nonEmpty,
-  adapter: z.literal("linkedin-jobs-curious-coder")
+  adapter: z.enum(["linkedin-jobs-curious-coder", "jobs-cz", "nofluffjobs"])
 });
 
 export const sourceSchema = z.object({
@@ -23,6 +24,8 @@ export const searchInstructionsSchema = z.object({
     query: nonEmpty,
     location: nonEmpty.optional(),
     geoId: z.string().regex(/^\d+$/, "geoId must contain only digits").optional(),
+    workArrangements: z.array(workArrangementSchema).min(1).refine((values) => new Set(values).size === values.length, "workArrangements must be unique").optional(),
+    /** @deprecated Use workArrangements. Kept for existing payloads. */
     remote: z.boolean().optional(),
     postedWithinDays: z.union([z.literal(1), z.literal(7), z.literal(30)]).optional()
   }),
@@ -38,7 +41,7 @@ export const jobSearchInputSchema = z.object({
 
 export const jobResultSchema = z.object({
   externalId: nonEmpty.optional(), title: nonEmpty, company: nonEmpty, location: nonEmpty.optional(),
-  remote: z.boolean().optional(), salary: nonEmpty.optional(), url: z.string().url(), sourceId: nonEmpty,
+  workArrangement: workArrangementSchema.optional(), remote: z.boolean().optional(), salary: nonEmpty.optional(), url: z.string().url(), sourceId: nonEmpty,
   publishedAt: nonEmpty.optional(), description: nonEmpty.optional()
 });
 

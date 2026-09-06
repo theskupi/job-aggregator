@@ -1,0 +1,14 @@
+[
+  {
+    "jobId": "senior-frontend-engineer-example-remote",
+    "title": "Senior Frontend Engineer",
+    "company": "Example Tech",
+    "location": "Remote, Praha",
+    "isRemote": true,
+    "salary": "100 000 - 140 000 CZK / month",
+    "description": "Build frontend applications with React and TypeScript.",
+    "postedDate": "2026-09-01T08:00:00Z",
+    "postingUrl": "https://nofluffjobs.com/cz/job/senior-frontend-engineer-example-remote"
+  },
+  { "title": "Invalid item without company and URL" }
+]

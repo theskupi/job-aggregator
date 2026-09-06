@@ -6,6 +6,9 @@ describe("LinkedIn Actor adapter", () => {
   it("maps provider-facing criteria deterministically", () => {
     expect(linkedinActorInput({ criteria: { query: "frontend engineer", remote: true, postedWithinDays: 7, location: "Czech Republic", geoId: "104508036" } }, 5)).toMatchObject({ keywords: "Remote frontend engineer", datePosted: "pastWeek", location: "Czech Republic", geoId: "104508036", limitPerSource: 5 });
   });
+  it("expresses remote and hybrid preferences in the Actor query", () => {
+    expect(linkedinActorInput({ criteria: { query: "frontend engineer", workArrangements: ["remote", "hybrid"] } }, 50).keywords).toBe("Remote OR Hybrid frontend engineer");
+  });
   it("skips invalid items and normalizes valid results", () => {
     const warnings: string[] = [];
     const jobs = normalizeLinkedInItems(fixture, "linkedin-jobs", 5, (warning) => warnings.push(warning));

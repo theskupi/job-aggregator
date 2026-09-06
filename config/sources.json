@@ -10,6 +10,18 @@
         "actorId": "curious_coder/linkedin-jobs-scraper",
         "adapter": "linkedin-jobs-curious-coder"
       }
+    },
+    {
+      "id": "jobs-cz",
+      "name": "Jobs.cz",
+      "url": "https://www.jobs.cz/",
+      "acquisition": { "provider": "apify", "actorId": "automation-lab/jobs-cz-scraper", "adapter": "jobs-cz" }
+    },
+    {
+      "id": "nofluffjobs",
+      "name": "No Fluff Jobs",
+      "url": "https://nofluffjobs.com/",
+      "acquisition": { "provider": "apify", "actorId": "solidcode/nofluffjobs-scraper", "adapter": "nofluffjobs" }
     }
   ]
 }

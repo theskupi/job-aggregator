@@ -1,17 +1,15 @@
 {
   "sourceListId": "czech",
-  "sourceIds": ["linkedin-jobs"],
   "instructions": {
     "criteria": {
-      "query": "frontend or product engineer, React, TypeScript",
-      "location": "Czechia",
+      "query": "frontend developer, React, TypeScript",
       "geoId": "104508036",
       "workArrangements": ["remote", "hybrid"],
       "postedWithinDays": 7
     },
     "context": {
       "profile": "Experienced frontend software engineer",
-      "preferences": ["modern frontend architecture", "design systems", "accessibility", "product engineering"]
+      "preferences": ["remote work", "modern frontend architecture", "design systems"]
     }
   },
   "limitPerSource": 50

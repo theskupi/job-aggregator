@@ -7,7 +7,7 @@ import { loadCatalog, loadConfiguration, loadSourceList } from "../src/config.js
 describe("configuration loader", () => {
   it("loads the Czech list and validates its references", async () => {
     const configuration = await loadConfiguration("czech");
-    expect(configuration.sourceList.sourceIds).toEqual(["linkedin-jobs"]);
+    expect(configuration.sourceList.sourceIds).toEqual(["linkedin-jobs", "jobs-cz", "nofluffjobs"]);
     expect(configuration.sources.map(({ id }) => id)).toContain("linkedin-jobs");
   });
   it("rejects duplicate catalog IDs and duplicate list IDs", async () => {

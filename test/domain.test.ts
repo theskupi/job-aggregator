@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { jobSearchInputSchema } from "../src/domain.js";
+import czechAllExample from "../config/examples/czech-all.search.json" with { type: "json" };
 
 const input = (overrides: Record<string, unknown> = {}) => ({
   sourceListId: "czech",
@@ -9,6 +10,14 @@ const input = (overrides: Record<string, unknown> = {}) => ({
 });
 
 describe("job search input schema", () => {
+  it("accepts the all-source Czech example", () => {
+    expect(jobSearchInputSchema.parse(czechAllExample)).toMatchObject({ sourceListId: "czech", limitPerSource: 50, instructions: { criteria: { workArrangements: ["remote", "hybrid"] } } });
+  });
+  it("validates requested work arrangements", () => {
+    expect(jobSearchInputSchema.safeParse(input({ instructions: { criteria: { query: "engineer", workArrangements: ["remote", "hybrid"] } } })).success).toBe(true);
+    expect(jobSearchInputSchema.safeParse(input({ instructions: { criteria: { query: "engineer", workArrangements: ["remote", "remote"] } } })).success).toBe(false);
+    expect(jobSearchInputSchema.safeParse(input({ instructions: { criteria: { query: "engineer", workArrangements: ["anywhere"] } } })).success).toBe(false);
+  });
   it("accepts the Czech LinkedIn geoId", () => {
     expect(jobSearchInputSchema.parse(input({ instructions: { criteria: { query: "engineer", geoId: "104508036" } } })).instructions.criteria.geoId).toBe("104508036");
   });

@@ -1,0 +1,16 @@
+{
+  "sourceListId": "czech",
+  "sourceIds": ["jobs-cz"],
+  "instructions": {
+    "criteria": {
+      "query": "frontend developer, React, TypeScript",
+      "location": "Praha",
+      "workArrangements": ["remote", "hybrid"]
+    },
+    "context": {
+      "profile": "Experienced frontend software engineer",
+      "preferences": ["modern frontend architecture", "design systems", "accessibility"]
+    }
+  },
+  "limitPerSource": 50
+}

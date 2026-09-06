@@ -4,5 +4,3 @@ dist/
 .trigger/
 coverage/
 *.log
-
-IMPLEMENTATION_PLAN.md

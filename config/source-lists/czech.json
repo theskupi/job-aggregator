@@ -2,5 +2,5 @@
   "version": 1,
   "id": "czech",
   "name": "Czech job portals",
-  "sourceIds": ["linkedin-jobs"]
+  "sourceIds": ["linkedin-jobs", "jobs-cz", "nofluffjobs"]
 }
