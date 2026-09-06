@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "linkedin-jobs",
+      "name": "LinkedIn Jobs",
+      "url": "https://www.linkedin.com/jobs/",
+      "acquisition": {
+        "provider": "apify",
+        "actorId": "curious_coder/linkedin-jobs-scraper",
+        "adapter": "linkedin-jobs-curious-coder"
+      }
+    }
+  ]
+}

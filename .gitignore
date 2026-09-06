@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+.trigger/
+coverage/
+*.log
+
+IMPLEMENTATION_PLAN.md

@@ -1,0 +1,31 @@
+{
+  "name": "job-search-aggregator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Configurable job search aggregator powered by Trigger.dev and Apify",
+  "type": "module",
+  "engines": { "node": ">=26" },
+  "scripts": {
+    "search": "tsx src/cli.ts",
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "trigger:dev": "trigger dev",
+    "trigger:deploy": "trigger deploy"
+  },
+  "dependencies": {
+    "@trigger.dev/sdk": "^4.0.0",
+    "apify-client": "^2.20.0",
+    "dotenv": "^16.4.7",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "tsx": "^4.19.3",
+    "@trigger.dev/build": "^4.5.16",
+    "trigger.dev": "^4.5.16",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  }
+}

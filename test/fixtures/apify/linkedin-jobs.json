@@ -1,0 +1,20 @@
+[
+  {
+    "id": "123",
+    "link": "https://www.linkedin.com/jobs/view/123",
+    "title": "Frontend Engineer",
+    "companyName": "Example Corp",
+    "location": "Prague, Czechia",
+    "postedAt": "2 days ago",
+    "descriptionText": "Build accessible products.",
+    "workRemoteAllowed": true,
+    "salaryInfo": "€70,000–€90,000"
+  },
+  {
+    "link": "https://www.linkedin.com/jobs/view/456",
+    "title": "Product Engineer",
+    "companyName": "Another Corp",
+    "workplaceTypes": ["Remote"]
+  },
+  { "title": "Invalid item", "companyName": "Missing URL" }
+]
