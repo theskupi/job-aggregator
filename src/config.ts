@@ -23,8 +23,8 @@ export async function loadSourceList(id: string, listsDirectory = join(root, "co
   return list;
 }
 
-export async function loadConfiguration(sourceListId: string): Promise<{ sources: JobSource[]; sourceList: SourceList }> {
-  const [sources, sourceList] = await Promise.all([loadCatalog(), loadSourceList(sourceListId)]);
+export async function loadConfiguration(sourceListId: string, catalogPath = join(root, "config/sources.json"), listsDirectory = join(root, "config/source-lists")): Promise<{ sources: JobSource[]; sourceList: SourceList }> {
+  const [sources, sourceList] = await Promise.all([loadCatalog(catalogPath), loadSourceList(sourceListId, listsDirectory)]);
   const known = new Set(sources.map((source) => source.id));
   for (const sourceId of sourceList.sourceIds) if (!known.has(sourceId)) throw new Error(`Source list references unknown source: ${sourceId}`);
   return { sources, sourceList };

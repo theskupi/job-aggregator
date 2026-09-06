@@ -22,6 +22,7 @@ export const searchInstructionsSchema = z.object({
   criteria: z.object({
     query: nonEmpty,
     location: nonEmpty.optional(),
+    geoId: z.string().regex(/^\d+$/, "geoId must contain only digits").optional(),
     remote: z.boolean().optional(),
     postedWithinDays: z.union([z.literal(1), z.literal(7), z.literal(30)]).optional()
   }),

@@ -4,7 +4,7 @@ import fixture from "./fixtures/apify/linkedin-jobs.json" with { type: "json" };
 
 describe("LinkedIn Actor adapter", () => {
   it("maps provider-facing criteria deterministically", () => {
-    expect(linkedinActorInput({ criteria: { query: "frontend engineer", remote: true, postedWithinDays: 7, location: "Czech Republic" } }, 5)).toMatchObject({ keywords: "Remote frontend engineer", datePosted: "pastWeek", limitPerSource: 5 });
+    expect(linkedinActorInput({ criteria: { query: "frontend engineer", remote: true, postedWithinDays: 7, location: "Czech Republic", geoId: "104508036" } }, 5)).toMatchObject({ keywords: "Remote frontend engineer", datePosted: "pastWeek", location: "Czech Republic", geoId: "104508036", limitPerSource: 5 });
   });
   it("skips invalid items and normalizes valid results", () => {
     const warnings: string[] = [];

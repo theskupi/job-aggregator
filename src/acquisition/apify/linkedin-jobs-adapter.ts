@@ -4,6 +4,7 @@ import type { JobResult, SearchInstructions } from "../../domain.js";
 export const linkedinActorInput = (instructions: SearchInstructions, limit: number) => ({
   urls: [], keywords: instructions.criteria.remote && !/\bremote\b/i.test(instructions.criteria.query) ? `Remote ${instructions.criteria.query}` : instructions.criteria.query,
   ...(instructions.criteria.location ? { location: instructions.criteria.location } : {}),
+  ...(instructions.criteria.geoId ? { geoId: instructions.criteria.geoId } : {}),
   ...(instructions.criteria.postedWithinDays ? { datePosted: ({ 1: "past24Hours", 7: "pastWeek", 30: "pastMonth" } as const)[instructions.criteria.postedWithinDays] } : {}),
   scrapeCompany: false, limitPerSource: limit, autoConvertToAiSearch: true
 });

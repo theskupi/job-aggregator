@@ -5,6 +5,7 @@
     "criteria": {
       "query": "frontend or product engineer, React, TypeScript",
       "location": "Czechia",
+      "geoId": "104508036",
       "remote": true,
       "postedWithinDays": 7
     },
